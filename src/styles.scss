@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.h-100-vh{
+  height: 100vh !important;
+}
+.o-hidden{
+  overflow: hidden;
+}
+.form-error{
+  color: #e3324c;
+  font-size: .8rem !important;
+  font-style: italic;
+  padding: .4em .5em .3em;
+}
+
+@media (min-width: 1440px) {
+  .col-xxl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-xxl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}

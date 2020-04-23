@@ -1,0 +1,67 @@
+<div class="bg-white">
+  <div class="container-fluid  p-0">
+    <div class="row no-gutters">
+      <div class="col-sm-6 col-lg-4 col-xxl-3 align-self-center order-2 order-sm-1">
+        <div class="d-flex align-items-center h-100-vh">
+
+          <div class="login p-5">
+            <h1 class="logo mb-2">Pet Care</h1>
+            <p>Bienvenido, por favor acceda con su cuenta.</p>
+
+            <form [formGroup]="formLogin" (submit)="login()" class="mt-3 mt-sm-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input id="email" type="text" class="form-control" placeholder="Email" [formControlName]="'email'">
+                    <div class="form-error" *ngIf="fc.email.touched && fc.email.invalid">
+                      <div *ngIf="fc.email.errors.required">
+                        Email requerido.
+                      </div>
+                      <div *ngIf="fc.email.errors.email">
+                        Por favor escriba un correo valido.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input id="password" type="password" class="form-control" [formControlName]="'password'" placeholder="******">
+                    <div class="form-error" *ngIf="fc.password.touched && fc.password.invalid">
+                      <div *ngIf="fc.password.errors.required">
+                        Password requerido.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-block d-sm-flex  align-items-center">
+                    <a [routerLink]="'/forgot-pass'" class="ml-auto">¿Olvidaste tu contraseña?</a>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-primary">
+                    <app-spinner *ngIf="loaded"></app-spinner>
+                    <span>Entrar</span>
+                  </button>
+                </div>
+                <div class="col-12 mt-3">
+                  <p>No tienes una cuenta?<a [routerLink]="'/sign-up'"> Registrate.</a></p>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-8 col-xxl-9 bg-gradient o-hidden order-1 order-sm-2">
+        <div class="row align-items-center h-100">
+          <div class="col-7 mx-auto ">
+            <!--<img class="img-fluid" src="../../../../assets/login.svg" alt="">-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.crabbly_spinner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  animation: crabbly_spinner infinite .75s linear;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-top-color: rgba(0, 0, 0, .1);
+  border-right-color: rgba(0, 0, 0, .1);
+  border-bottom-color: rgba(0, 0, 0, .1);
+  border-radius: 100%;
+}
+
+@keyframes crabbly_spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
