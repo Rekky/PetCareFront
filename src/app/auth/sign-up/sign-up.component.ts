@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../shared/services/auth.service';
 
@@ -17,13 +17,14 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.formRegister = new FormGroup({
-      email: new FormControl(null, []),
-      username: new FormControl(null, []),
-      password: new FormControl(null, []),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      username: new FormControl(null, [Validators.required]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+      repeatPassword: new FormControl(null, [Validators.required, Validators.minLength(4)]),
     });
   }
 
-  async register() {
+  async register(): Promise<void> {
     try {
       this.loaded = true;
       await this.authService.signUp(
@@ -41,6 +42,10 @@ export class SignUpComponent implements OnInit {
 
   showRegisterCompleted(): void {
     this.router.navigateByUrl('/sign-in');
+  }
+
+  get fc() {
+    return this.formRegister.controls;
   }
 
 }

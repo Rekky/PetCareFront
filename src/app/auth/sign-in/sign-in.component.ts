@@ -11,7 +11,7 @@ import {AuthService} from '../../../shared/services/auth.service';
 export class SignInComponent implements OnInit {
 
   formLogin: FormGroup;
-  loaded = false;
+  loaded: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) { }
 

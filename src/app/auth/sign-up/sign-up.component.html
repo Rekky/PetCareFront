@@ -14,18 +14,47 @@
                   <div class="form-group">
                     <label for="email">Email*</label>
                     <input id="email" type="text" class="form-control" [formControlName]="'email'" placeholder="Email">
+                    <div class="form-error" *ngIf="fc.email.touched && fc.email.invalid">
+                      <div *ngIf="fc.email.errors.required">
+                        Email requerido.
+                      </div>
+                      <div *ngIf="fc.email.errors.email">
+                        Por favor escriba un correo valido.
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label for="username">Username*</label>
                     <input id="username" type="text" class="form-control" [formControlName]="'username'" placeholder="Username">
+                    <div class="form-error" *ngIf="fc.username.touched && fc.username.invalid">
+                      <div *ngIf="fc.username.errors.required">
+                        Nombre de usuario requerido.
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label for="password">Password*</label>
                     <input id="password" type="password" class="form-control" [formControlName]="'password'" placeholder="******">
+                    <div class="form-error" *ngIf="fc.password.touched && fc.password.invalid">
+                      <div *ngIf="fc.password.errors.required">
+                        Password requerido.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="password">Repite el password*</label>
+                    <input id="password2" type="password" class="form-control" [formControlName]="'repeatPassword'" placeholder="******">
+                    <div class="form-error" *ngIf="fc.repeatPassword.touched && fc.repeatPassword.invalid">
+                      <div *ngIf="fc.repeatPassword.errors.required">
+                        Password requerido.
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12 mt-3">
