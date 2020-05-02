@@ -1,4 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.logo{
+  font-family: 'Cookie', cursive;
+  font-size: 70px;
+
+  .logo-img{
+    width: 50px;
+    position: relative;
+    bottom: 30px;
+    left: -20px;
+  }
+}
+
+// auxiliars
 .h-100-vh{
   height: 100vh !important;
 }
