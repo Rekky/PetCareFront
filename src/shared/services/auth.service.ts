@@ -19,27 +19,27 @@ export class AuthService {
 
   async signIn(email: string, password: string): Promise<any> {
     const body = {email, password};
-    return await this.http.post(this.URL + 'auth/sign-in', body).toPromise();
+    return await this.http.post(this.URL + 'users/sign-in', body).toPromise();
   }
 
   async signUp(email: string, username: string, password: string): Promise<any> {
     const body = {email, username, password};
-    return await this.http.post(this.URL + 'auth/sign-up', body).toPromise();
+    return await this.http.post(this.URL + 'users/sign-up', body).toPromise();
   }
 
   async forgotPassword(email: string): Promise<any> {
     const body = {email};
-    return await this.http.post(this.URL + 'auth/forgot-password', body).toPromise();
+    return await this.http.post(this.URL + 'users/forgot-password', body).toPromise();
   }
 
   async resetPassword(password: string): Promise<any> {
     const body = {password};
     console.log(password);
-    return await this.http.post(this.URL + 'auth/reset-password', body).toPromise();
+    return await this.http.post(this.URL + 'users/reset-password', body).toPromise();
   }
 
   async signOut(): Promise<any> {
-    localStorage.removeItem('projectGeneratorToken');
+    localStorage.removeItem('myToken');
   }
 
 }
