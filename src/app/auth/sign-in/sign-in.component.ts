@@ -25,7 +25,10 @@ export class SignInComponent implements OnInit {
   async login() {
     try {
       this.loaded = true;
-      await this.authService.signIn(this.formLogin.get('email').value, this.formLogin.get('password').value);
+      await this.authService.signIn(
+        this.formLogin.get('email').value,
+        this.formLogin.get('password').value
+      );
       await this.router.navigateByUrl('/home');
     } catch (e) {
       console.warn(e);
