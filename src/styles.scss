@@ -1,3 +1,6 @@
+body {
+  background: #e9f3fc;
+}
 .logo{
   font-family: 'Cookie', cursive;
   font-size: 70px;
@@ -33,4 +36,12 @@
     flex: 0 0 75%;
     max-width: 75%;
   }
+}
+
+// CARDS
+.card{
+  border-radius: 1rem;
+  border: 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(115,105,215,.15);
 }

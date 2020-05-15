@@ -1,17 +1,34 @@
 <div class="row">
-    <div style="position:relative;width: 100%;height: 28rem;overflow: hidden;">
-      <img style="object-fit: cover;width: 100%;height: 100%;" [src]="'https://www.elnacional.com/wp-content/uploads/2020/04/Cuidar-mascotas-cuarentena-Foto-Archivo.jpg'">
+  <app-main-search></app-main-search>
+</div>
 
-      <div class="card w-50" style="position: relative;top: -12rem;margin: 0 auto;">
-        <div class="card-body">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Buscar</span>
-            </div>
-            <input type="text" class="form-control" placeholder="Alojamiento, Paseo...">
-          </div>
-        </div>
-      </div>
+<div class="row info-cards-container">
+  <div class="card w-25 text-white">
+    <img [src]="'https://qsnoticias.mx/wp-content/uploads/2019/05/Mascotas-TXT.jpeg'" class="card-img">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Alojamiento</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
     </div>
+  </div>
+
+  <div class="card w-25 text-white">
+    <img [src]="'https://imagenes.milenio.com/b2w3Re2JDsadEIlj9PhB0eenpFI=/958x596/https://www.milenio.com/uploads/media/2020/04/19/paseos-cortos-limpiar-patitas-correas_76_98_719_448.jpg'" class="card-img">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Paseos</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
+    </div>
+  </div>
+
+  <div class="card w-25 text-white">
+    <img [src]="'https://www.visitacasas.com/wp-content/uploads/2009/12/044.jpg'" class="card-img">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Guarderia</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
+    </div>
+  </div>
+
 </div>
 

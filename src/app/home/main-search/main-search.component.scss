@@ -1,0 +1,37 @@
+.search-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+  top: -14rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  height: 200px;
+}
+
+.buttons-container{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: .5rem;
+
+  .btn{
+    flex: 1;
+    height: 3rem;
+  }
+}
+
+.input-group{
+  margin: .5rem 0;
+  width: auto;
+  height: 3rem;
+
+  input{
+    height: auto;
+  }
+}
+
+
+

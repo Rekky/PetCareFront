@@ -11,6 +11,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { MainSearchComponent } from './home/main-search/main-search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
     SignUpComponent,
     SpinnerComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    MainSearchComponent
   ],
   imports: [
     BrowserModule,
