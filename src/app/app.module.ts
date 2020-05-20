@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { MainSearchComponent } from './home/main-search/main-search.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MainSearchComponent } from './home/main-search/main-search.component';
     SpinnerComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    MainSearchComponent
+    MainSearchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainSearchComponent implements OnInit {
 
+  currentSearchType: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectSearchType(type: number): void {
+    this.currentSearchType = type;
   }
 
 }
