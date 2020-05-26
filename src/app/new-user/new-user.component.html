@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <div *ngIf="!login">
+            <form [formGroup]="profileForm" (ngSubmit)="createUser()" >
+              <h4>Crear Usuario!</h4>
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Nombre*</label><br/>
+                    <input type="text" formControlName="firstName"/>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Apellidos*</label><br/>
+                    <input type="text" formControlName="lastName">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label> Fecha de nacimiento:</label><br/>
+                    <input type="text" formControlName="date">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <button type="submit">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+      </div>
+      <div *ngIf="profile">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="assets/muerte.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">{{profileForm.value.firstName}}</p>
+            <p class="card-text">{{profileForm.value.lastName}}</p>
+            <p class="card-text">{{profileForm.value.date}}</p>
+            <button (click)="modifyButton()">Modificar</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="modify">
+        <form [formGroup]="profileForm" (ngSubmit)="modifyUser()">
+          <h4>Modifica tus datos!</h4>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label>Nombre*</label><br/>
+                <input type="text" formControlName="firstName" value="profileForm.value.firstName}"/>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label>Apellidos*</label><br/>
+                <input type="text" formControlName="lastName" value="profileForm.value.lastName"/>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label> Fecha de nacimiento:</label><br/>
+                <input type="date" formControlName="date" value="profileForm.value.date"/>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group">
+                <button type="submit">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm">
+
+    </div>
+  </div>
+</div>

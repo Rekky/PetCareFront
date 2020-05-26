@@ -13,6 +13,8 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { MainSearchComponent } from './home/main-search/main-search.component';
 import { HeaderComponent } from './header/header.component';
+import { NewUserComponent } from './new-user/new-user.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HeaderComponent } from './header/header.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     MainSearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    ResetPasswordComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
