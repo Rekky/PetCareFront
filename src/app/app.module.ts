@@ -14,6 +14,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { MainSearchComponent } from './home/main-search/main-search.component';
 import { HeaderComponent } from './header/header.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import {FooterComponent} from './footer/footer.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NewUserComponent } from './new-user/new-user.component';
     MainSearchComponent,
     HeaderComponent,
     ResetPasswordComponent,
-    NewUserComponent
+    NewUserComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
