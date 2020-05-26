@@ -1,4 +1,4 @@
-.search-content{
+.search-box{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,8 +8,9 @@
   margin: 0 auto;
   padding: 1.25rem;
   height: 200px;
+  max-width: 980px;
 }
-.search-content .input-group {
+.search-box .input-group {
   margin: .5rem 0;
   width: auto;
   height: 3rem;

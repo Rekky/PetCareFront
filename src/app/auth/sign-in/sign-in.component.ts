@@ -12,6 +12,7 @@ export class SignInComponent implements OnInit {
 
   formLogin: FormGroup;
   loaded: boolean = false;
+  msgError: string = null;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -25,13 +26,13 @@ export class SignInComponent implements OnInit {
   async login() {
     try {
       this.loaded = true;
-      await this.authService.signIn(
-        this.formLogin.get('email').value,
-        this.formLogin.get('password').value
-      );
+      this.msgError = null;
+      const response = await this.authService.signIn(this.formLogin.get('email').value, this.formLogin.get('password').value);
+      this.authService.setUserToken(response.token);
       await this.router.navigateByUrl('/home');
     } catch (e) {
-      console.warn(e);
+      console.warn(e.error);
+      this.msgError = e.error.msg;
     } finally {
       this.loaded = false;
     }

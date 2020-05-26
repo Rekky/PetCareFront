@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AuthService {
 
   async signIn(email: string, password: string): Promise<any> {
     const body = {email, password};
-    return await this.http.post(this.URL + 'users/sign-in', body).toPromise();
+    const httpOptions = {headers: this.getHeaders()};
+    return await this.http.post(this.URL + 'users/sign-in', body, httpOptions).toPromise();
   }
 
   async signUp(email: string, username: string, password: string): Promise<any> {
@@ -38,8 +40,42 @@ export class AuthService {
     return await this.http.post(this.URL + 'users/reset-password', body).toPromise();
   }
 
+  isLoggedIn(): Observable<any> {
+    return new Observable<any>((observer: any) => {
+      // this.http.get(this.publicApiUrl + 'user',
+      //   {
+      //     params: new HttpParams()
+      //       .set('storefront_id', this.storefrontId),
+      //     headers: this.getHeaders(),
+      //     observe: 'response'
+      //   })
+      //   .pipe( catchError(err => this.catchError(err) ))
+      //   .subscribe( (response:HttpResponse<UserResponse>) => {
+      //
+      //   });
+    });
+  }
+
+  getHeaders(): HttpHeaders | null {
+    if (this.getUserToken() && this.getUserToken() != null) {
+      return new HttpHeaders()
+        .set('Authorization', 'Bearer ' + this.getUserToken())
+        .set('Content-Type', 'application/json');
+    } else {
+      return null;
+    }
+  }
+
+  setUserToken(token): void {
+    localStorage.setItem('token', token);
+  }
+
+  getUserToken(): string {
+    return localStorage.getItem('token');
+  }
+
   async signOut(): Promise<any> {
-    localStorage.removeItem('myToken');
+    localStorage.removeItem('token');
   }
 
 }

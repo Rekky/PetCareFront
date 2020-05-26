@@ -45,6 +45,11 @@
                     <app-spinner *ngIf="loaded"></app-spinner>
                     <span>Entrar</span>
                   </button>
+                  <div class="form-error" *ngIf="fc.password.touched && fc.password.invalid">
+                    <div *ngIf="!loaded && msgError">
+                      {{msgError}}
+                    </div>
+                  </div>
                 </div>
                 <div class="col-12 mt-3">
                   <p>No tienes una cuenta?<a [routerLink]="'/sign-up'"> Registrate.</a></p>
