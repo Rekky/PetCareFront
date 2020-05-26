@@ -11,6 +11,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { MainSearchComponent } from './home/main-search/main-search.component';
+import { HeaderComponent } from './header/header.component';
 import { NewUserComponent } from './new-user/new-user.component';
 
 
@@ -22,6 +24,9 @@ import { NewUserComponent } from './new-user/new-user.component';
     SignUpComponent,
     SpinnerComponent,
     ForgotPasswordComponent,
+    ResetPasswordComponent,
+    MainSearchComponent,
+    HeaderComponent,
     ResetPasswordComponent,
     NewUserComponent
   ],

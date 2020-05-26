@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import "./colors";
+
+body {
+  background: #f9f9fc;
+}
 .logo{
   font-family: 'Cookie', cursive;
-  font-size: 70px;
+  font-size: inherit;
+  font-weight: 700;
+  color: inherit;
 
   .logo-img{
     width: 50px;
@@ -10,7 +18,7 @@
   }
 }
 
-// auxiliars
+// ------------------------ AUXILIARS
 .h-100-vh{
   height: 100vh !important;
 }
@@ -33,4 +41,25 @@
     flex: 0 0 75%;
     max-width: 75%;
   }
+}
+.font-size-7 {
+  font-size: 70px;
+}
+.font-size-3 {
+  font-size: 25px;
+}
+.shadow-lg{
+  box-shadow: 0 2rem 1.5rem -1.5rem rgba(33,37,41,0.15),0 0 1.5rem 0.5rem rgba(33,37,41,0.05) !important;
+}
+// ------------------------- CARDS
+.card{
+  position: relative;
+  border-radius: .5rem;
+  border: 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(115,105,215,.15);
+}
+
+.card-shadow {
+  box-shadow: 0 0 20px rgba(115,105,215,.15);
 }

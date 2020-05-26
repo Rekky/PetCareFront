@@ -1,0 +1,61 @@
+.search-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+  top: -14rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  height: 200px;
+}
+.search-content .input-group {
+  margin: .5rem 0;
+  width: auto;
+  height: 3rem;
+
+  input{
+    height: 3rem;
+  }
+}
+
+.search-type-container{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: .5rem;
+}
+.search-type-container .card {
+  cursor: pointer;
+  height: 8rem;
+
+  p {
+    color: rgba(0,0,0, 0.6);
+    font-weight: 600;
+  }
+}
+.search-type-container .card.selected {
+  background: #2092ed;
+  color: #fff;
+
+  p {
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+  }
+
+  .fas {
+    color: rgba(255,255,255,0.2);
+  }
+}
+
+
+.fas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  left: 1rem;
+  color: rgba(0,0,0,0.2);
+  transition: 0.15s all ease;
+}
