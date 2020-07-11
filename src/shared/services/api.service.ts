@@ -13,6 +13,12 @@ export class ApiService {
 
   constructor(private router: Router, private http: HttpClient, private authService: AuthService) { }
 
+  async getBlogContent(): Promise<any> {
+    const body = {};
+    const httpOptions = {headers: this.authService.getHeaders()};
+    return await this.http.get(this.URL + 'blog', httpOptions).toPromise();
+  }
+
   async getCuidador(id: string): Promise<any> {
     const body = {};
     const httpOptions = {headers: this.authService.getHeaders()};

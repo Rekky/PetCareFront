@@ -13,6 +13,7 @@ export class AuthService {
   URL = environment.api_url;
   public user$: Subject<any> = new Subject<any>();
   public user: any;
+  public isLoggedInSubject$ = new Subject<any>();
 
   constructor(private router: Router, private http: HttpClient) {
     this.user = true;
@@ -21,7 +22,12 @@ export class AuthService {
   async signIn(email: string, password: string): Promise<any> {
     const body = {email, password};
     const httpOptions = {headers: this.getHeaders()};
-    return await this.http.post(this.URL + 'users/sign-in', body, httpOptions).toPromise();
+    return await this.http.post(this.URL + 'users/sign-in', body, httpOptions).toPromise().then((response: any) => {
+      if (response) {
+        this.setUserToken(response.token);
+        this.isLoggedInSubject$.next(true);
+      }
+    });
   }
 
   async signUp(email: string, username: string, password: string): Promise<any> {
@@ -53,6 +59,15 @@ export class AuthService {
       //   .subscribe( (response:HttpResponse<UserResponse>) => {
       //
       //   });
+      if (this.getUserToken()){
+        this.isLoggedInSubject$.next(true);
+        observer.next(true);
+        observer.complete();
+      } else {
+        this.isLoggedInSubject$.next(false);
+        observer.next(false);
+        observer.complete();
+      }
     });
   }
 
@@ -75,7 +90,8 @@ export class AuthService {
   }
 
   async signOut(): Promise<any> {
-    localStorage.removeItem('token');
+    this.isLoggedInSubject$.next(false);
+    await localStorage.removeItem('token');
   }
 
 }

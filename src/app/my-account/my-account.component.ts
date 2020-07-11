@@ -11,7 +11,7 @@ export class MyAccountComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.api.getCuidador('12345');
+    // this.api.getCuidador('12345');
   }
 
 }

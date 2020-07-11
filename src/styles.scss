@@ -18,7 +18,10 @@ body {
   }
 }
 
-// ------------------------ AUXILIARS
+// ------------------------ AUXILIARS ----------------------- //
+.cursor-pointer{
+  cursor: pointer;
+}
 .h-100-vh{
   height: 100vh !important;
 }
@@ -48,10 +51,13 @@ body {
 .font-size-3 {
   font-size: 25px;
 }
+.shadow{
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(33,37,41,0.15);
+}
 .shadow-lg{
   box-shadow: 0 2rem 1.5rem -1.5rem rgba(33,37,41,0.15),0 0 1.5rem 0.5rem rgba(33,37,41,0.05) !important;
 }
-// ------------------------- CARDS
+// ------------------------- CARDS ----------------------------- //
 .card{
   position: relative;
   border-radius: .5rem;

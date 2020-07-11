@@ -8,10 +8,12 @@ import {ForgotPasswordComponent} from './auth/forgot-password/forgot-password.co
 import {ResetPasswordComponent} from './auth/reset-password/reset-password.component';
 import {AuthGuard} from '../shared/services/auth.guard';
 import {MyAccountComponent} from './my-account/my-account.component';
+import {BlogComponent} from './blog/blog.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'profile', component: NewUserComponent},
+  {path: 'blog', component: BlogComponent},
   // auth
   {path: 'sign-in', component: SignInComponent},
   {path: 'sign-up', component: SignUpComponent},

@@ -15,6 +15,8 @@ import { MainSearchComponent } from './home/main-search/main-search.component';
 import { HeaderComponent } from './header/header.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import {FooterComponent} from './footer/footer.component';
+import { BlogComponent } from './blog/blog.component';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 
 @NgModule({
@@ -30,13 +32,15 @@ import {FooterComponent} from './footer/footer.component';
     HeaderComponent,
     ResetPasswordComponent,
     NewUserComponent,
-    FooterComponent
+    FooterComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
