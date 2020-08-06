@@ -13,7 +13,21 @@
         <div class="tab" (click)="tabSelected = 3" [class.active]="tabSelected == 3">Cuidador</div>
     </div>
     <div class="tabs-content">
-      <div class="tabs-footer">
+      <div class="tabs-content-body">
+        <div class="calendar-card">
+          <div class="row">
+            <div class="col-4">
+              <label>Dirección</label>
+              <input type="text" class="form-control" placeholder="Ciudad, municipio, barrio..." style="padding: 1.5rem .75rem;font-size:1.2rem;">
+            </div>
+            <div class="col-4">
+              <label>Cuando</label>
+              <input type="text" class="form-control" placeholder="Cuando" style="padding: 1.5rem .75rem;font-size:1.2rem;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabs-content-footer">
         <button class="btn btn-success float-right" (click)="search()">Buscar&nbsp;<i class="eva eva-search-outline"></i></button>
       </div>
     </div>
