@@ -90,3 +90,18 @@
   width: 100%;
   padding: 0 3rem;
 }
+.input-text-card{
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+
+  label{
+    font-size: 13px;
+    color: #ababab;
+  }
+
+  input[type=text]{
+    font-size:1.2rem;
+    padding: 1.5rem .75rem;
+  }
+}

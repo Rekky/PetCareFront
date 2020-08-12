@@ -3,7 +3,7 @@
   <img [src]="bgImage" class="bg">
   <div class="main-search-titles">
     <div class="main-search-title">Pet Care</div>
-    <div class="main-search-subtitle">Cuidamos de tu perro como lo harías tú</div>
+    <div class="main-search-subtitle">Cuidamos de tu mascota como lo harías tú</div>
   </div>
   <div class="main-search-box shadow-sm">
     <div class="tabs">
@@ -17,12 +17,22 @@
         <div class="calendar-card">
           <div class="row">
             <div class="col-4">
-              <label>Dirección</label>
-              <input type="text" class="form-control" placeholder="Ciudad, municipio, barrio..." style="padding: 1.5rem .75rem;font-size:1.2rem;">
+              <div class="input-text-card">
+                <label>Dirección</label>
+                <input type="text" formControlName="address" class="form-control" placeholder="Ciudad, municipio, barrio...">
+              </div>
             </div>
             <div class="col-4">
-              <label>Cuando</label>
-              <input type="text" class="form-control" placeholder="Cuando" style="padding: 1.5rem .75rem;font-size:1.2rem;">
+              <div class="input-text-card">
+                <label>Entrega</label>
+                <input type="text" formControlName="entrega" class="form-control" placeholder="Cuando">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="input-text-card">
+                <label>Recogida</label>
+                <input type="text" formControlName="recogida" class="form-control" placeholder="Cuando">
+              </div>
             </div>
           </div>
         </div>
